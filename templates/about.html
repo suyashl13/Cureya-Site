@@ -1,5 +1,102 @@
-{% extends 'base.html' %}
+{% extends 'partials/_base.html' %}
+{% load static %}
 {% block content %}
+<body>
+  <div class=" overflow-hidden">
+   <!-- Spinner Start -->
+   <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+ <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="position-relative">
+      <img src="{% static 'img/hero-bg.jpg'%}" class="img-fluid full-image" alt="Hero Background Image">
+      <div class="container" data-aos="fade-in">
+        <h1>About CUREYA</h1>
+        <h2>Your one-stop destination for all your healthcare needs! We are a health-tech startup that is passionate about providing you with the best possible care and services, right at your fingertips.</h2>
+        <div class="d-flex align-items-center">
+          <i class="bx bxs-right-arrow-alt get-started-icon"></i>
+          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+  <main id="main">
+    <!--  Why Us Section  -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+            <div class="content mb-4">
+              <h3 class="text-light">CUREYA - where patient-centric care meets cutting-edge technology!
+              </h3>
+              <p>
+                At CUREYA, we believe that the patient should always come first. That's why we've created a revolutionary AI-ML based system that is designed to put your health and well-being at the forefront of everything we do. Our geolocation-based patient-centric data allows us to provide you with the most accurate and up-to-date information about healthcare services in your area, so you can make informed decisions about your health.
+
+                We understand that healthcare costs can be a major concern for many people. That's why we offer a cost and treatment analysis that helps you understand the financial implications of your healthcare choices. With CUREYA, you can rest assured that you're getting the best possible care at the most affordable price.
+
+                We're not just about providing healthcare services - we're about making healthcare accessible to everyone. That's why we're committed to the UN-SDG (Goal 4) of Good Health and Well Being, and strive to make healthcare available to all, regardless of income or location.
+
+                So what are you waiting for? Join the CUREYA community today and experience patient-centric care like never before!
+
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+            <div class="content mb-4">
+              <h3  class="text-light">CUREYA -  analyzes and recommends personalized healthcare decisions.
+              </h3>
+              <p>
+                Our unique USP lies in our ability to provide you with accurate and reliable information about the cost and quality of healthcare services in your area. With our geolocation-based system, you can easily find medical centers that offer the treatment you need at the most affordable prices.
+
+                But that's not all - our AI-ML based system analyzes thousands of data points to provide you with personalized recommendations based on your specific healthcare needs. Whether you're looking for a specialist, diagnostic service, or hospital, we've got you covered.
+
+                At CUREYA, we understand that healthcare can be complex and overwhelming. That's why we're committed to simplifying the process and empowering you with the information and resources you need to make the best possible decisions about your health.
+
+                So why settle for anything less? Download CUREYA today and experience the power of informed healthcare decisions.
+
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+            <div class="content mb-4">
+              <h3  class="text-light">CUREYA is not just a solution, but a feel-good solution to the growing problems of medical tourism and patient care in India.
+              </h3>
+              <p>
+                The quality of patient care in India has been improving over the years, but many patients still face challenges in accessing healthcare services, especially in rural areas. CUREYA is committed to bridging this gap by providing patients with access to healthcare services located close to their residences.
+
+                Our geolocation-based system makes it easy for patients to locate hospitals and other healthcare services in their area, providing them with easy access to secondary care facilities as well as a quick recovery after treatment.
+
+                We believe that every patient deserves access to high-quality healthcare, regardless of their location or financial situation. With CUREYA, patients can rest assured that they are getting the best possible care at the most affordable prices, right in their own communities.
+
+
+                Join the CUREYA community today and experience the feel-good solution to healthcare in India.
+
+
+              </p>
+              <div class="text-center">
+                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Why Us Section -->
+
     <!-- ======= About Section ======= -->
     <section id="about" class="about section-bg">
       <div class="container">
@@ -67,4 +164,216 @@
     </section>
 
     <!-- End About Section -->
+
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services ">
+      <div class="container">
+          <h2 data-aos="fade-up" class="text-center my-5">Services</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="icon-box ">
+              <div class="icon"><i class="bi bi-briefcase"></i></div>
+              <h4 class="title"><a href="">Booking Appointments:</a></h4>
+              <p class="description"> We understand that scheduling appointments with healthcare providers can be time-consuming and challenging. With CUREYA, you can book appointments with doctors and healthcare providers easily and quickly, right from your phone or computer.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-card-checklist"></i></div>
+              <h4 class="title"><a href="">Health Checkups: </a></h4>
+              <p class="description">Regular health checkups are an essential part of maintaining good health. We offer a range of health checkup packages that include tests and consultations with doctors to help you monitor your health and detect any potential health issues early on.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-coin-stack"></i></div>
+              <h4 class="title"><a href="">Data Analytics:</a></h4>
+              <p class="description"> We understand that visiting a diagnostic center or hospital for sample collection can be inconvenient and time-consuming. With CUREYA, you can schedule home sample collection services at your convenience, making it easy for you to get the tests you need without leaving your home.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-detail"></i></div>
+              <h4 class="title"><a href="">Online Report Access:</a></h4>
+              <p class="description">We provide online access to your medical reports, making it easy for you to view and share your reports with healthcare providers as needed.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-bar-chart"></i></div>
+              <h4 class="title"><a href="">Cost Analysis: </a></h4>
+              <p class="description">We understand that healthcare costs can be a significant burden on patients and their families. That's why we provide a cost analysis service that helps you compare the costs of healthcare services across different providers, making it easy for you to find the most affordable options.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card" style="background-image: url({% static 'img/mission.jpeg'%});">
+              <div class="card-body">
+                <h3 class="card-title text-start">
+                  Our Mission
+                </h3>
+                <p class="card-text">To make healthcare accessible, affordable, and convenient for everyone. We understand that navigating the complex healthcare system can be overwhelming and stressful, which is why we've created an easy-to-use geolocation-based application that locates healthcare services near you and provides a cost and treatment analysis. With CUREYA, you can rest assured that you're getting the right care at the right time and place.
+
+                  At CUREYA, we believe that everyone deserves access to high-quality healthcare, regardless of their income or location. That's why we're committed to bridging the information gap and empowering patients with the knowledge and resources they need to make informed healthcare decisions.
+                  </p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="card" style="background-image: url({% static 'img/team.jpeg'%});">
+              <div class="card-body">
+                <h3 class="card-title text-start">Our Team</h3>
+                <p class="card-text"> Our team of experienced healthcare professionals is dedicated to providing you with personalized care and support every step of the way. Whether you're looking for a doctor, specialist, or diagnostic service, we've got you covered. Our commitment to your well-being drives us to go the extra mile in ensuring you receive the best possible care.
+
+                  So why wait? Download our app today and experience the CUREYA difference for yourself. With our comprehensive services and dedicated team, we promise you won't be disappointed!
+                  </p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card" style="background-image: url({% static 'img/vision.jpeg'%});">
+              <div class="card-body">
+                <h3 class="card-title text-start">Our Vision</h3>
+                <p class="card-text">We're committed to providing patients with accurate and reliable information about healthcare services in their area, helping them to find the best possible care at the most affordable prices. By doing so, we hope to make affordable care accessible to all, regardless of their socioeconomic status or geographic location.
+
+                  But we're not just about providing information - we're about empowering patients to take control of their healthcare. Our goal is to provide patients with the resources they need to make informed decisions about their health, and to take an active role in managing their own care.
+
+                  Ultimately, our vision is to create a world where everyone has access to affordable, high-quality healthcare. We believe that by providing patients with the information and resources they need to make informed decisions about their health, we can help to make this vision a reality. Join us on our journey to make healthcare accessible to all.
+                  </p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card" style="background-image: url({% static './img/care.jpeg'%});">
+              <div class="card-body">
+                <h3 class="card-title text-start">Our Care</h3>
+                <p class="card-text">we are dedicated to providing patients with accurate and reliable healthcare information. We strive to ensure that patients can access the best care at affordable prices. Our mission is to empower patients to make informed decisions about their health and take an active role in managing their own care. We envision a world where everyone has access to high-quality, affordable healthcare, and we are committed to making this vision a reality. Join Cureya as we work towards making healthcare accessible to all through our compassionate and patient-centered approach.</p>
+                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Values Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+        <h2 data-aos="fade-up" class="text-center my-5">Why Trust Us </h2>
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="box ">
+              <h3 >Accreditation:</h3>
+           <p data-aos="fade-up">We are accredited by recognized regulatory bodies and have received certifications from reputable organizations, which demonstrates our commitment to providing high-quality healthcare services.
+          </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="box">
+              <h3>Transparency: </h3>
+           <p data-aos="fade-up">We provide transparent pricing, services, and medical procedures, so you can make informed decisions about your healthcare needs.
+
+          </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="box">
+              <h3>Reputation:</h3>
+           <p data-aos="fade-up"> We have a reputation for providing high-quality medical services, and our positive customer reviews and ratings are a testament to our commitment to patient care.
+
+          </p>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 col-md-6" data-aos="fade-up">
+            <div class="box">
+              <h3>Security: </h3>
+           <p data-aos="fade-up">We prioritize customer privacy and security, and we use secure data encryption, two-factor authentication, and compliance with data protection regulations to ensure that your personal information is safe and secure.
+
+          </p>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 col-md-6" data-aos="fade-up">
+            <div class="box">
+              <h3>Expertise:</h3>
+           <p data-aos="fade-up"> Our team of healthcare professionals includes experienced and qualified doctors, nurses, and other medical professionals who are dedicated to providing the best possible care to our patients.
+
+          </p>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="row justify-content-center">
+            <h2 data-aos="fade-up" class="text-center">Contact</h2>
+        </div>
+         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-xl-9 col-lg-12 mt-4">
+            <form method="post" role="form" class="php-email-form">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="text-center mt-4 ">
+                {% if msg %}
+                  <button type="submit" disabled class="btn btn-secondary">{{msg}}</button>
+                {% else %}
+                  <button type="submit" class="btn btn-secondary">Send Message</button>
+                {% endif %}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+<div class="section-title ">
+
+
+        </div>
+  </main>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+</body>
 {% endblock %}

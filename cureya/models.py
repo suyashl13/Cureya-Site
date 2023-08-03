@@ -25,3 +25,21 @@ class PatientAppointment(models.Model):
 
     def __str__(self):
         return self.patient_name
+
+
+class Message(models.Model):
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
+
+    name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=150)
+    subject = models.CharField(max_length=50)
+    message = models.TextField(max_length=220)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return '{} ({})'.format(self.name, self.message)
