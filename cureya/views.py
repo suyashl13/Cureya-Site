@@ -74,7 +74,7 @@ def service(request: ASGIRequest):
 
 
 def team(request: ASGIRequest):
-    team_members = TeamMember.objects.filter(is_visible=True)
+    team_members = TeamMember.objects.filter(is_visible=True).order_by('-priority')
     return render(request, 'team.html', {'team': team_members})
 
 

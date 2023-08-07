@@ -57,6 +57,8 @@ class TeamMember(models.Model):
     photo = models.ImageField(upload_to='team/')
     designation = models.CharField(max_length=40)
 
+    priority = models.IntegerField(default=3)
+
     is_visible = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
