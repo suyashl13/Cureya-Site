@@ -1,0 +1,33 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Team</p>
+                <h1>Our Experienced Team</h1>
+            </div>
+            <div class="row g-4">
+                {% for team_member in team %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ team_member.photo.url }}" alt="">
+                        </div>
+                        <div class="appoint team-text  text-center p-4">
+                            <h5>{{team_member.name}}</h5>
+                            <p class="text-success">{{team_member.designation}}</p>
+                            <div class="team-social text-center">
+                                <a class="" href="/team/{{team_member.id}}">know more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+{% endblock %}

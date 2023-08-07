@@ -1,0 +1,76 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+{% block content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4 col-sm-12 mb-3">
+
+      <div class="card w-100 mb-3" style="width: 18rem;">
+        <div class="card-body">
+          <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center">
+                      <img src="{{ team_member.photo.url }}" alt="Admin" height="260" width="220">
+                      <hr>
+                      <div>
+                        <h4>{{team_member.name}}</h4>
+                        <p class="text-secondary mb-1">{{ team_member.designation }}</p>
+                        <p class="text-secondary mb-1">Experience: {{team_member.experience_years}}+ years</p>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+      </div>
+
+      {% for section in sections %}
+      {% if section.section_size == 'SM' %}
+      <div class="card mb-3">
+        <div class="card-header bg-success text-center text-light">
+          {{ section.section_name }}
+        </div>
+        <div class="card-body">
+          {% if section.content_type == 'P' %}
+            {% for content in section.content %}
+              <p>{{content.content}}</p>
+            {% endfor %}
+          {% else %}
+            <ul>
+              {% for content in section.content %}
+                <li>{{content.content}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+    <div class="col-md-8 col-sm-12">
+      {% for section in sections %}
+      {% if section.section_size == 'LG' %}
+      <div class="card mb-3">
+        <div class="card-header bg-success text-center text-light">
+          {{ section.section_name }}
+        </div>
+        <div class="card-body">
+          {% if section.content_type == 'P' %}
+            {% for content in section.content %}
+              <p>{{content.content}}</p>
+            {% endfor %}
+          {% else %}
+            <ul>
+              {% for content in section.content %}
+                <li>{{content.content}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
