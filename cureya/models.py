@@ -91,3 +91,16 @@ class Content(models.Model):
 
     def __str__(self):
         return '{} ({})'.format(self.section.section_name, self.section.team_mate.name)
+
+
+class PublishBookResponse(models.Model):
+    name = models.CharField(max_length=60)
+    email = models.EmailField(max_length=110)
+    phone = models.CharField(max_length=14)
+
+    publish_information = models.TextField(
+        max_length=255
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

@@ -75,8 +75,7 @@
             <p class="section-text">Healthy eating is essential for maintaining a healthy body and  mind. It is a critical component of a healthy lifestyle and can help prevent chronic diseases such as heart disease, diabetes, and obesity. The food we eat plays a significant role in determining our health status. A balanced diet that includes a variety of nutrient dense
               foods is key to maintaining good health.
             </p>
-            <button type="submit" class="btn btn-primary">Buy Now</button>
-
+            <button id="healthy-eating-btn" onclick="onOpen('https://play.google.com/store/books/details?id=DrSxEAAAQBAJ&pli=1')" class="btn btn-primary" type="button">Buy Now</button>
           </div>
 
           <div class="hero-banner has-before">
@@ -106,9 +105,7 @@
             <p class="section-text">Mental health management is essential for overall well-being and quality of life. Mental health affects every aspect of a person's life, including physical health, relationships, work, and daily activities. Mental health management involves taking care of one's mental health by adopting healthy habits, seeking professional help when needed, and
                 practicing self-care. The importance of mental health management cannot be overstated. Mental health disorders such as anxiety, depression, and bipolar disorder can affect anyone, regardless of age, gender, or background. These disorders can cause a range of symptoms, including feelings of sadness, fear, worry, and irritability. They can also cause physical symptoms such as headaches, fatigue, and digestive issues.
             </p>
-            <form action="https://play.google.com/store/books/details?id=DrSxEAAAQBAJ&pli=1" method="get" target="_blank">
-              <button type="submit" class="btn btn-primary">Buy Now</button>
-            </form>
+               <button id="healthy-eating-btn" onclick="onOpen('https://www.amazon.in/dp/B0BXY72XV1/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr')" class="btn btn-primary" type="button">Buy Now</button>
 
           </div>
 
@@ -170,8 +167,6 @@
                 </figure>
 
                 <div class="card-content">
-
-
 
                   <h3 class="h3 card-title">Biomimcry</h3>
 
@@ -236,6 +231,31 @@
       </section>
 
 
+      <section>
+        <div class="container">
+          <p class="section-subtitle">Want to publish books?</p>
+
+          <h2 class="h2 section-title has-underline">
+            Lets Connect
+            <span class="span has-before"></span>
+          </h2>
+
+          <form class="contact-form" method="post">
+            {% csrf_token %}
+            <input name="full-name" type="text" class="form-field" placeholder="Name" required>
+            <input name="email" type="email" class="form-field" placeholder="Email" required>
+            <input name="phone" maxlength="12" type="text" class="form-field" placeholder="Phone" required>
+            <textarea name="information" type="text" class="form-field" placeholder="What you want to publish?" required></textarea>
+            {% if msg %}
+              <button type="submit" disabled class="form-field-btn">{{ msg }}</button>
+            {% else %}
+              <button type="submit" class="form-field-btn">Submit</button>
+            {% endif %}
+          </form>
+        </div>
+      </section>
+
+
   <!--
     - #FOOTER
   -->
@@ -280,7 +300,11 @@
 
 
 
-
+  <script>
+    function onOpen(openLink) {
+      window.open(openLink, "_blank");
+    }
+  </script>
 
   <!--
     - custom js link

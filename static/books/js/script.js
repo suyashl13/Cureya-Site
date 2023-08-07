@@ -16,8 +16,6 @@ const addEventOnelem = function (elem, type, callback) {
   }
 }
 
-
-
 /**
  * toggle navbar
  */

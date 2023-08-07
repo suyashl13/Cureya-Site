@@ -3,7 +3,7 @@ from uuid import UUID
 from django.core.handlers.asgi import ASGIRequest
 from django.shortcuts import render
 from datetime import datetime
-from .models import PatientAppointment, Message, TeamMember, Section, Content
+from .models import PatientAppointment, Message, TeamMember, Section, Content, PublishBookResponse
 
 
 # Create your views here.
@@ -114,4 +114,16 @@ def contact(request: ASGIRequest):
 
 
 def books(request: ASGIRequest):
-    return render(request, 'books.html')
+    if request.method == 'POST':
+        try:
+            PublishBookResponse(
+                name=request.POST['full-name'],
+                email=request.POST['email'],
+                phone=request.POST['phone'],
+                publish_information=request.POST['information']
+            ).save()
+            return render(request, 'books.html', {'msg': 'Submitted Successfully'})
+        except Exception as e:
+            return render(request, 'books.html', {'msg': None})
+
+    return render(request, 'books.html', {'msg': None})
