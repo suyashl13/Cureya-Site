@@ -1,9 +1,10 @@
 from uuid import UUID
 
 from django.core.handlers.asgi import ASGIRequest
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from datetime import datetime
-from .models import PatientAppointment, Message, TeamMember, Section, Content, PublishBookResponse
+from .models import PatientAppointment, Message, TeamMember, Section, Content, PublishBookResponse, \
+    DiagnosticListingEnquiry, DoctorListingEnquiry
 
 
 # Create your views here.
@@ -127,3 +128,43 @@ def books(request: ASGIRequest):
             return render(request, 'books.html', {'msg': None})
 
     return render(request, 'books.html', {'msg': None})
+
+
+def connect_us(request: ASGIRequest):
+    if request.GET['page'] == 'diagnostic':
+        if request.method == 'POST':
+            diagnostic_listing_enquiry = DiagnosticListingEnquiry(
+                name=request.POST['diagnostic-center'],
+                contact_person=request.POST['contact-person-name'],
+                contact_person_position=request.POST['contact-person-position'],
+                contact_person_email=request.POST['contact-person-email'],
+                contact_person_phone=request.POST['contact-person-phone'],
+                address=request.POST['diagnostics-address'],
+            )
+            try:
+                diagnostic_listing_enquiry.save()
+                return render(request, 'connect-diagnostics.html', {'msg': 'Saved Successfully!'})
+            except:
+                return render(request, 'connect-diagnostics.html', {'msg': 'Something went wrong.'})
+        else:
+            return render(request, 'connect-diagnostics.html', {})
+
+    elif request.GET['page'] == 'doctor':
+        try:
+            if request.method == 'POST':
+                DoctorListingEnquiry(
+                    doctor_name=request.POST['doctor-name'],
+                    speciallity=request.POST['speciality'],
+                    doctor_email=request.POST['email'],
+                    doctor_phone=request.POST['phone'],
+                    hospital_name=request.POST['hospital-name'],
+                    city=request.POST['city'],
+                    hospital_address=request.POST['hospital-address']
+                ).save()
+                return render(request, 'connect-doctor.html', {'msg': 'Saved Successfully!'})
+            else:
+                return render(request, 'connect-doctor.html', {})
+        except:
+            return render(request, 'connect-doctor.html', {'msg': 'Something went wrong'})
+
+    return render(request, '404.html')
