@@ -19,42 +19,42 @@
       {% csrf_token %}
       <div class="col-12 mt-2">
         <div class="form-floating">
-          <input name="diagnostic-center" type="text" class="form-control" id="diagnostic" placeholder="Subject" required>
+          <input name="diagnostic-center" type="text" maxlength="60" class="form-control" id="diagnostic" placeholder="Subject" required>
           <label for="diagnostic">Diagnostic Center</label>
         </div>
       </div>
 
       <div class="col-12 mt-2">
         <div class="form-floating">
-          <input name="contact-person-name" type="text" class="form-control" id="contact-person" placeholder="Subject" required>
+          <input name="contact-person-name" type="text" maxlength="60" class="form-control" id="contact-person" placeholder="Subject" required>
           <label for="contact-person">Contact Person Name</label>
         </div>
       </div>
 
       <div class="col-12 mt-2">
         <div class="form-floating">
-          <input name="contact-person-position" type="text" class="form-control" id="contact-person-position" placeholder="Subject" required>
+          <input name="contact-person-position" type="text" maxlength="30" class="form-control" id="contact-person-position" placeholder="Subject" required>
           <label for="contact-person-position">Contact Person Position</label>
         </div>
       </div>
 
       <div class="col-12 mt-2">
         <div class="form-floating">
-          <input name="contact-person-email" type="text" class="form-control" id="contact-person-email" placeholder="Subject" required>
+          <input name="contact-person-email" type="email" class="form-control" maxlength="50" id="contact-person-email" placeholder="Subject" required>
           <label for="contact-person-email">Contact Person Email</label>
         </div>
       </div>
 
       <div class="col-12 mt-2">
         <div class="form-floating">
-          <input name="contact-person-phone" type="text" class="form-control" id="contact-person-phone" placeholder="Subject" required>
+          <input name="contact-person-phone" type="phone" maxlength="13" class="form-control" id="contact-person-phone" placeholder="Subject" required>
           <label for="contact-person-email">Contact Person Phone</label>
         </div>
       </div>
 
        <div class="col-12 mt-2">
         <div class="form-floating">
-          <input name="diagnostics-address" type="text" class="form-control" id="diagnostics-address" placeholder="Subject" required>
+          <textarea name="diagnostics-address" type="text" class="form-control" maxlength="550" id="diagnostics-address" placeholder="Subject" required></textarea>
           <label for="diagnostics-address">Address</label>
         </div>
       </div>
