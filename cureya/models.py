@@ -106,3 +106,32 @@ class PublishBookResponse(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class DiagnosticListingEnquiry(models.Model):
+    name = models.CharField(max_length=60)
+    contact_person = models.CharField(max_length=60)
+    contact_person_position = models.CharField(max_length=40)
+    contact_person_email = models.EmailField(max_length=60)
+    contact_person_phone = models.CharField(max_length=12)
+    address = models.TextField(max_length=550)
+
+    is_closed = models.BooleanField(default=False)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+class DoctorListingEnquiry(models.Model):
+    doctor_name = models.CharField(max_length=60)
+    speciallity = models.CharField(max_length=60)
+
+    doctor_email = models.EmailField(max_length=60)
+    doctor_phone = models.EmailField(max_length=60)
+    hospital_name = models.CharField(max_length=60)
+
+    city = models.CharField(max_length=10)
+    hospital_address = models.TextField(max_length=550)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

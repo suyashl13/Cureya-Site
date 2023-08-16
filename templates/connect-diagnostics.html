@@ -1,0 +1,74 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+{% block head %}
+<style>
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="row justify-content-center m-4">
+<div class="col-lg-8 col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.1s">
+  <h3 class="mt-2">Let's Collaborate</h3>
+  <p>Fill the form to list your diagnostic center on our platform.</p>
+  <hr>
+  <div class="appoint rounded p-5">
+    <p class="d-inline-block border bg-success rounded-pill text-light py-1 px-4">For Diagnostic Centers</p>
+    <form method="post">
+      {% csrf_token %}
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="diagnostic-center" type="text" class="form-control" id="diagnostic" placeholder="Subject" required>
+          <label for="diagnostic">Diagnostic Center</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="contact-person-name" type="text" class="form-control" id="contact-person" placeholder="Subject" required>
+          <label for="contact-person">Contact Person Name</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="contact-person-position" type="text" class="form-control" id="contact-person-position" placeholder="Subject" required>
+          <label for="contact-person-position">Contact Person Position</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="contact-person-email" type="text" class="form-control" id="contact-person-email" placeholder="Subject" required>
+          <label for="contact-person-email">Contact Person Email</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="contact-person-phone" type="text" class="form-control" id="contact-person-phone" placeholder="Subject" required>
+          <label for="contact-person-email">Contact Person Phone</label>
+        </div>
+      </div>
+
+       <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="diagnostics-address" type="text" class="form-control" id="diagnostics-address" placeholder="Subject" required>
+          <label for="diagnostics-address">Address</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-3">
+        {% if msg %}
+        <button type="submit" disabled class="btn btn-secondary">{{msg}}</button>
+        {% else %}
+        <button type="submit" class="btn btn-secondary">Send Message</button>
+        {% endif %}
+      </div>
+  </form>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

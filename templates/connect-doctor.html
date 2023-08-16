@@ -1,0 +1,78 @@
+{% extends 'partials/_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+<div class="row justify-content-center m-4">
+<div class="col-lg-8 col-md-12 col-sm-12 wow fadeIn" data-wow-delay="0.1s">
+  <h3 class="mt-2">Let's Collaborate</h3>
+  <p>Fill the form to list your clinic center on our platform.</p>
+  <hr>
+  <div class="appoint rounded p-5">
+    <p class="d-inline-block border bg-success rounded-pill text-light py-1 px-4">For Doctors</p>
+    <form method="post">
+      {% csrf_token %}
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="doctor-name" type="text" class="form-control" id="doctor-name" placeholder="Subject">
+          <label for="doctor-name">Doctor's Name</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="speciality" type="text" class="form-control" id="speciality" placeholder="Subject" required>
+          <label for="speciality">Speciality</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="email" type="email" class="form-control" id="email" placeholder="Subject" required>
+          <label for="email">Doctor's Email</label>
+        </div>
+      </div>
+
+
+      <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="phone" type="number" class="form-control" id="phone" placeholder="Subject" required>
+          <label for="phone">Doctor's Phone</label>
+        </div>
+      </div>
+
+        <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="hospital-name" type="text" class="form-control" id="hospital-name" placeholder="Subject" required>
+          <label for="hospital-name">Hospital/Clinic Name</label>
+        </div>
+      </div>
+
+          <div class="col-12 mt-2">
+        <div class="form-floating">
+          <input name="city" type="text" class="form-control" id="city" placeholder="Subject" required>
+          <label for="city">City</label>
+        </div>
+      </div>
+
+       <div class="col-12 mt-2">
+        <div class="form-floating">
+            <textarea name="hospital-address" type="text" class="form-control" id="hospital-address" placeholder="Subject" required></textarea>
+          <label for="hospital-address">Hospital Address</label>
+        </div>
+      </div>
+
+
+      <div class="col-12 mt-3">
+        {% if msg %}
+        <button type="submit" disabled class="btn btn-secondary">{{msg}}</button>
+        {% else %}
+        <button type="submit" class="btn btn-secondary">Send Message</button>
+        {% endif %}
+      </div>
+  </form>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}
