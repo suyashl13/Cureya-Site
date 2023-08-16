@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-rt6(ce4+_y07%^!x1kc9_7_-3bs-#2xq0-e8dgf@$$n$g&%1s4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['206.189.134.170', 'test.cureya.in', 'cureya.in']
 
 # Application definition
 
@@ -118,6 +118,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static/",
     BASE_DIR / "static/",
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Media Files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  # 'data' is my media folder
