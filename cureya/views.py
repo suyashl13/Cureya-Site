@@ -128,8 +128,6 @@ def books(request: ASGIRequest):
             return render(request, 'books.html', {'msg': None})
 
     return render(request, 'books.html', {'msg': None})
-<<<<<<< HEAD
-=======
 
 
 def connect_us(request: ASGIRequest):
@@ -170,4 +168,3 @@ def connect_us(request: ASGIRequest):
             return render(request, 'connect-doctor.html', {'msg': 'Something went wrong'})
 
     return render(request, '404.html')
->>>>>>> origin/master
