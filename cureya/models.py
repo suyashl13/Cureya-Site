@@ -121,6 +121,8 @@ class DiagnosticListingEnquiry(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self) -> str:
+        return '{} ({})'.format(self.name, self.contact_person_phone)
 
 class DoctorListingEnquiry(models.Model):
     doctor_name = models.CharField(max_length=60)
@@ -135,3 +137,6 @@ class DoctorListingEnquiry(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    def __str__(self) -> str:
+        return '{} ({})'.format(self.doctor_name, self.doctor_phone)
